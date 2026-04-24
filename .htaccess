@@ -1,0 +1,10 @@
+# Uncomment the following to prevent the httpoxy vulnerability
+# See: https://httpoxy.org/
+#<IfModule mod_headers.c>
+#    RequestHeader unset Proxy
+#</IfModule>
+
+RewriteEngine On
+RewriteBase /home_helper
+RewriteRule ^$ webroot/ [L]
+RewriteRule (.*) webroot/$1 [L]
